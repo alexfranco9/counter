@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <title>Counter</title>
+</head>
+
+<body>
+    <h1>My Counter</h1>
+
+    <div>
+        <h1>Counter: {{session['counter']}}</h1>
+        <form action="/increment_counter" method="POST">
+            <input type="hidden" name="counter" value="1">
+            <input type="submit">
+        </form>
+    </div>
+    <div>
+        <form action="/reset_counter" method="POST">
+            <input type="submit" value="Reset Counter">
+        </form>
+    </div>
+</body>
+
+</html>
